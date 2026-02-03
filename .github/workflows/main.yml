@@ -11,3 +11,9 @@ jobs:
     steps:
       - name: Print a Welcome Message
         run: echo "Welcome to your first Github Action"
+
+      - name: Ckeckout Repositery
+        uses: actions/checkout@v6.0.2
+
+      - name: List Repositery files
+        run : ls -al
