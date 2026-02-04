@@ -1,15 +1,24 @@
-on: 
-  workflow_dispatch: 
+name: Manual Matrix Test
+
+on:
+  workflow_dispatch:
+
 jobs:
-  job_1:
+  test-matrix:
     strategy:
       fail-fast: false
       matrix:
-        node_version:[16, 18, 20]
+        node_version: [16, 18, 20]
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
-    steps: 
-      - uses: actions/setup-node@v4
-        with: 
+    steps:
+      - name: Setup Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v4
+        with:
           node-version: ${{ matrix.node_version }}
-      
+
+      - name: Display Information
+        run: |
+          echo "✅ Running on: ${{ runner.os }}"
+          echo "✅ Node.js Version: ${{ matrix.node_version }}"
+          echo "✅ Job OS from matrix: ${{ matrix.os }}"
