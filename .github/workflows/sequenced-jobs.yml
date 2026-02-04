@@ -14,7 +14,7 @@ jobs:
   job_3:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "i am {{ github.job }}, i am parrallel dont need any other job to be done
+      - run: echo "i am {{ github.job }}, i am parrallel dont need any other job to be done"
   job_4:
     runs-on: ubuntu-latest
     needs: 
