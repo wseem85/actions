@@ -1,13 +1,13 @@
-on: 
+on:
   workflow_dispatch:
     inputs:
-      enviroment: 
-        description: "Choose enviroment"
+      enviroment:
+        description: 'Choose enviroment'
         required: true
-        default: "staging"
+        default: 'staging'
         type: choice
         options:
-          - sataging
+          - satging
           - production
 jobs:
   deploy:
@@ -15,5 +15,3 @@ jobs:
     steps:
       - name: Deploy Application
         run: echo "Deploying Application ${{ inputs.enviroment }}.."
-        
-        
