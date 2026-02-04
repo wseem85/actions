@@ -1,8 +1,8 @@
 name: Scheduled test
 on:
   schedule:
-    - crom: '0 0 * * 0' # every Sunday at midnight
-  workflow-dispatch: # allow to run manually
+    - cron: '0 0 * * 0' # every Sunday at midnight
+  workflow_dispatch: # allow to run manually
 jobs:
   test:
     runs-on: ubuntu-latest
